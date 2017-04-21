@@ -77,9 +77,89 @@ public class Menu {
 		}
 		
 		private void insercaoManual(){
-			//FUNÇÃO
-			System.out.println("Inserçao Manual");
+			int t = 0;
+			anunciosDAO anunc = new anunciosDAO();
+			comentsDAO coment = new comentsDAO();
+			EmpresaDAO empresa = new EmpresaDAO();
+			funcionarioDAO func = new funcionarioDAO();
+			grupoDAO grupo = new grupoDAO();
+			msgDAO msg = new msgDAO();
+			opiniaoDAO opin = new opiniaoDAO();
+			UsuarioDAO user = new UsuarioDAO();
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Digite o numero do que voce quer inserir:");
+			System.out.println("1-Anuncios");
+			System.out.println("2-Comentarios");
+			System.out.println("3-Empresas");
+			System.out.println("4-Funcionarios");
+			System.out.println("5-Grupos");
+			System.out.println("6-Mensagens");
+			System.out.println("7-Opinioes");
+			System.out.println("8-Usuarios");
+			System.out.println("9-Retornar ao menu de exibiçao");
+			System.out.println("10-Retornar ao menu principal");
+			t = (int)scan.nextInt();
+			if(t==1){
+				anunc.adicionaAnuncios(p);
+			}else if(t==2){
+				coment.adicionaComents(p);
+			}else if(t==3){
+				empresa.obterTodasEmpresas();
+			}else if(t==4){
+				func.obterTodosFunc();
+			}else if(t==5){
+				grupo.obterTodosGrupos();
+			}else if(t==6){
+				msg.obterTodasMsg();
+			}else if(t==7){
+				opin.obterTodasOpin();
+			}else if(t==8){
+				user.obterTodosUsuarios();
+			}else if(t==9){
+				exibicao();
+			}else if(t==10){
+				menu();
+			}else{
+				System.out.println("Voce nao digitou uma opçao valida");
+				exibicaoConsole();
+			}
+			scan.close();
 			flag = false;
+		}
+		
+		private void insercaoAnunc(){
+			Scanner p = new Scanner(System.in);
+			System.out.println("Digite as informaçoes:");
+			System.out.println("id");
+			
+		}
+		
+		private void insercaoComent(){
+			
+		}
+		
+		private void insercaoEmpresa(){
+			
+		}
+		
+		private void insercaoFunc(){
+			
+		}
+		
+		private void insercaoGrupo(){
+			
+		}
+		
+		private void insercaoMsg(){
+			
+		}
+		
+		private void insercaoOpiniao(){
+			
+		}
+		
+		private void insercaoUsuario(){
+			
 		}
 		
 		private void insercaoArquivo(){
@@ -134,8 +214,53 @@ public class Menu {
 		}
 		
 		private void exibicaoConsole(){
-			//FUNÇÃO
-			System.out.println("Exibição no console");
+			int t = 0;
+			anunciosDAO anunc = new anunciosDAO();
+			comentsDAO coment = new comentsDAO();
+			EmpresaDAO empresa = new EmpresaDAO();
+			funcionarioDAO func = new funcionarioDAO();
+			grupoDAO grupo = new grupoDAO();
+			msgDAO msg = new msgDAO();
+			opiniaoDAO opin = new opiniaoDAO();
+			UsuarioDAO user = new UsuarioDAO();
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Digite o numero do que voce quer exibir:");
+			System.out.println("1-Anuncios");
+			System.out.println("2-Comentarios");
+			System.out.println("3-Empresas");
+			System.out.println("4-Funcionarios");
+			System.out.println("5-Grupos");
+			System.out.println("6-Mensagens");
+			System.out.println("7-Opinioes");
+			System.out.println("8-Usuarios");
+			System.out.println("9-Retornar ao menu de exibiçao");
+			System.out.println("10-Retornar ao menu principal");
+			t = (int)scan.nextInt();
+			if(t==1){
+				anunc.obterTodosAnuncios();
+			}else if(t==2){
+				coment.obterTodosComents();
+			}else if(t==3){
+				empresa.obterTodasEmpresas();
+			}else if(t==4){
+				func.obterTodosFunc();
+			}else if(t==5){
+				grupo.obterTodosGrupos();
+			}else if(t==6){
+				msg.obterTodasMsg();
+			}else if(t==7){
+				opin.obterTodasOpin();
+			}else if(t==8){
+				user.obterTodosUsuarios();
+			}else if(t==9){
+				exibicao();
+			}else if(t==10){
+				menu();
+			}else{
+				System.out.println("Voce nao digitou uma opçao valida");
+				exibicaoConsole();
+			}
+			scan.close();
 			flag = false;
 		}
 		
